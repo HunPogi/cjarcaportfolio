@@ -304,7 +304,7 @@ nav a:hover {
         PROJECTS
 ========================= */
 section {
-    padding:100px 0;
+    padding:100px 4%;
 }
 section h2 {
     font-size:40px;
@@ -334,6 +334,18 @@ section h2 {
     transform:translateY(-8px);
     box-shadow:
     0 15px 35px rgba(0,0,0,.08);
+}
+/* =========================
+        CONTACT
+========================= */
+.contact-container {
+    max-width: var(--container-width);
+    margin: auto;
+}
+.contact-container p {
+    margin-top: 10px;
+    color:#94a3b8;
+    font-size:18px;
 }
 /* =========================
         FOOTER
