@@ -162,6 +162,11 @@ nav a:hover {
     border-color:#2563eb;
     transform:translateY(-3px);
 }
+.resume-btn {
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+}
 .tech-stack {
     display:flex;
     flex-wrap:wrap;
