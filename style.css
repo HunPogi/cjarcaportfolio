@@ -8,24 +8,27 @@ html {
     scroll-behavior: smooth;
 }
 body {
-    color: #0f172a;
+    color: #e2e8f0;
     background:
     linear-gradient(
-        90deg,
-        rgba(37,99,235,0.05) 1px,
-        transparent 1px
+        circle at top left,
+        #172554,
+        transparent 40%
     ),
     linear-gradient(
-        rgba(37,99,235,0.05) 1px,
-        transparent 1px
+        135deg,
+        #020617,
+        #0f172a,
+        #000000
     );
-    background-size:40px 40px;
+    min-height:100vh;
 }
 /* =========================
         NAVBAR
 ========================= */
 header {
-    background:#0f172a;
+    background:
+    rgba(2,6,23,0.8);
     padding:20px 8%;
     position:sticky;
     top:0;
@@ -94,7 +97,7 @@ nav a:hover {
     font-size:70px;
     line-height:1.05;
     letter-spacing:-3px;
-    color:#0f172a;
+    color:#f8fafc;
     margin:25px 0;
 }
 .hero-content h1 span {
@@ -103,7 +106,7 @@ nav a:hover {
 .hero-content p {
     font-size:19px;
     line-height:1.8;
-    color:#64748b;
+    color:#94a3b8;
     max-width:650px;
 }
 .hero-buttons {
@@ -116,7 +119,11 @@ nav a:hover {
     transition:.3s;
 }
 .primary-btn {
-    background:#2563eb;
+    linear-gradient(
+    135deg,
+    #2563eb,
+    #38bdf8
+    );
     color:white;
     padding:15px 32px;
     border-radius:12px;
@@ -146,12 +153,10 @@ nav a:hover {
     margin-top:40px;
 }
 .tech-stack span {
-    padding:8px 16px;
-    background:white;
-    border:1px solid #e2e8f0;
-    border-radius:50px;
-    color:#475569;
-    font-size:14px;
+    background:
+    rgba(15,23,42,0.8);
+    border:1px solid rgba(148,163,184,0.3);
+    color:#cbd5e1;
 }
 /* DEVELOPER CARD */
 .developer-card {
@@ -216,13 +221,14 @@ nav a:hover {
     align-items:center;
 }
 .about h1 {
+    color:#0f182a;
     font-size:58px;
     line-height:1.1;
     letter-spacing:-2px;
 }
 .about p {
     margin-top:25px;
-    color:#64748b;
+    color:#94a3b8;
     font-size:18px;
     line-height:1.8;
 }
@@ -233,17 +239,19 @@ nav a:hover {
     gap:20px;
 }
 .profile-card {
-    background:white;
-    border:1px solid #e2e8f0;
+    background:
+    rgba(15,23,42,0.7);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(148,163,184,0.2);
     padding:30px;
     border-radius:24px;
-    transition:.3s;
+    color:#f8fafc;
 }
 .profile-card h3 {
     margin-bottom:15px;
 }
 .profile-card p {
-    color:#64748b;
+    color:#94a3b8;
     font-size:16px;
 }
 .profile-card:hover {
@@ -267,12 +275,10 @@ section h2 {
     flex-wrap:wrap;
 }
 .card {
-    background:white;
-    width:300px;
-    padding:30px;
-    border-radius:20px;
-    border:1px solid #e2e8f0;
-    transition:.3s;
+    background:
+    rgba(15,23,42,0.8);
+    border:1px solid rgba(148,163,184,0.2);
+    color:#f8fafc;
 }
 .card:hover {
     transform:translateY(-8px);
@@ -303,6 +309,7 @@ footer {
     }
     .hero-content h1 {
         font-size:45px;
+        
     }
     .developer-card {
         margin-top:40px;
