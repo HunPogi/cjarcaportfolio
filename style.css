@@ -23,13 +23,24 @@ body {
     );
     min-height:100vh;
 }
+
+/* =========================
+        SHARED CONTAINER
+   Use this instead of piling
+   section-padding + max-width
+   on top of each other.
+========================= */
+:root {
+    --container-width: min(1400px, 94%);
+}
+
 /* =========================
         NAVBAR
 ========================= */
 header {
     background:
     rgba(2,6,23,0.8);
-    padding:20px 8%;
+    padding:20px 3%;
     position:sticky;
     top:0;
     z-index:100;
@@ -40,6 +51,8 @@ nav {
     display:flex;
     justify-content:space-between;
     align-items:center;
+    max-width: var(--container-width);
+    margin: auto;
 }
 .logo {
     color:white;
@@ -66,10 +79,10 @@ nav a:hover {
     min-height:95vh;
     display:flex;
     align-items:center;
-    padding:100px 8%;
+    padding:100px 0;
 }
 .hero-container {
-    max-width:1200px;
+    max-width: var(--container-width);
     width:100%;
     margin:auto;
     display:grid;
@@ -238,12 +251,12 @@ nav a:hover {
         ABOUT SECTION
 ========================= */
 .about {
-    max-width:1200px;
+    max-width: var(--container-width);
     margin:auto;
 }
 .about-container {
     display:grid;
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:1.15fr .85fr;
     gap:70px;
     align-items:center;
 }
@@ -291,16 +304,21 @@ nav a:hover {
         PROJECTS
 ========================= */
 section {
-    padding:100px 8%;
+    padding:100px 0;
 }
 section h2 {
     font-size:40px;
     margin-bottom:30px;
+    max-width: var(--container-width);
+    margin-left:auto;
+    margin-right:auto;
 }
 .projects-container {
     display:flex;
     gap:30px;
     flex-wrap:wrap;
+    max-width: var(--container-width);
+    margin:auto;
 }
 .card {
     background:
@@ -330,11 +348,17 @@ footer {
         RESPONSIVE
 ========================= */
 @media(max-width:900px){
+    :root {
+        --container-width: 92%;
+    }
+    header {
+        padding:20px 4%;
+    }
     nav ul {
         display:none;
     }
     .hero {
-        padding:70px 5%;
+        padding:70px 0;
     }
     .hero-container {
         grid-template-columns:1fr;
