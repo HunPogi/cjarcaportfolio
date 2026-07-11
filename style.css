@@ -386,6 +386,90 @@ section h2 {
     font-size:18px;
 }
 /* =========================
+        TIMELINE (Experience / Education)
+========================= */
+.section-eyebrow {
+    display:block;
+    color:#60a5fa;
+    font-family:"Courier New", monospace;
+    letter-spacing:4px;
+    font-size:13px;
+    font-weight:700;
+    text-transform:uppercase;
+    margin-bottom:15px;
+}
+.section-title {
+    font-size:48px;
+    color:#f8fafc;
+    letter-spacing:-1.5px;
+    margin-bottom:60px;
+}
+.timeline {
+    position:relative;
+    max-width: var(--container-width);
+    margin:auto;
+    padding-left:35px;
+}
+.timeline::before {
+    content:"";
+    position:absolute;
+    left:5px;
+    top:6px;
+    bottom:6px;
+    width:1px;
+    background:
+    repeating-linear-gradient(
+        to bottom,
+        rgba(148,163,184,0.35) 0 4px,
+        transparent 4px 9px
+    );
+}
+.timeline-item {
+    position:relative;
+    padding-bottom:50px;
+}
+.timeline-item:last-child {
+    padding-bottom:0;
+}
+.timeline-dot {
+    position:absolute;
+    left:-35px;
+    top:5px;
+    width:12px;
+    height:12px;
+    border:2px solid #2563eb;
+    background:#0f172a;
+    border-radius:50%;
+    box-shadow:0 0 0 4px rgba(37,99,235,0.15);
+}
+.timeline-date {
+    display:block;
+    font-family:"Courier New", monospace;
+    color:#64748b;
+    font-size:14px;
+    margin-bottom:10px;
+}
+.timeline-role {
+    font-size:21px;
+    font-weight:700;
+    color:#f8fafc;
+    margin-bottom:14px;
+}
+.timeline-role span {
+    color:#60a5fa;
+    font-weight:400;
+}
+.timeline-desc {
+    color:#94a3b8;
+    font-size:16px;
+    line-height:1.8;
+    margin-bottom:10px;
+    max-width:700px;
+}
+.timeline-desc:last-child {
+    margin-bottom:0;
+}
+/* =========================
         FOOTER
 ========================= */
 footer {
