@@ -295,6 +295,7 @@ const developer = {
         <p>
             A Secure Web-Based and Mobile App Certificates and Records Management System with Cryptographic Digital Signatures and Hash-Chaining Methods
         </p>
+        <button class="view-project-btn" onclick="openProjectModal('siguradocs')">View Project</button>
 
     </div>
 
@@ -309,6 +310,28 @@ const developer = {
             system using Wemos and Arduino for real-time
             location monitoring.
         </p>
+        <button class="view-project-btn" onclick="openProjectModal('gps-tracker')">View Project</button>
+    </div>
+
+    <div class="card">
+        <h3>Machine Problem – 1st Year</h3>
+        <p>[Short one-line summary of this MP]</p>
+        <button class="view-project-btn" onclick="openProjectModal('mp1')">View Project</button>
+    </div>
+    <div class="card">
+        <h3>Machine Problem – 2nd Year</h3>
+        <p>[Short one-line summary of this MP]</p>
+        <button class="view-project-btn" onclick="openProjectModal('mp2')">View Project</button>
+    </div>
+    <div class="card">
+        <h3>Machine Problem – 3rd Year</h3>
+        <p>[Short one-line summary of this MP]</p>
+        <button class="view-project-btn" onclick="openProjectModal('mp3')">View Project</button>
+    </div>
+    <div class="card">
+        <h3>Machine Problem – 4th Year</h3>
+        <p>[Short one-line summary of this MP]</p>
+        <button class="view-project-btn" onclick="openProjectModal('mp4')">View Project</button>
     </div>
 
 </div>
@@ -332,6 +355,153 @@ const developer = {
 
 </footer>
 
+
+<!-- PROJECT DETAIL MODAL -->
+<div id="projectModal" class="project-modal">
+    <div class="project-modal-content">
+        <span class="project-modal-close" onclick="closeProjectModal()">&times;</span>
+        <div class="project-carousel">
+            <button class="carousel-arrow left" onclick="prevImage()">&#10094;</button>
+            <img id="carouselImage" src="" alt="" class="carousel-image">
+            <button class="carousel-arrow right" onclick="nextImage()">&#10095;</button>
+            <span id="carouselCounter" class="carousel-counter"></span>
+        </div>
+        <h3 id="modalProjectTitle"></h3>
+        <div class="project-section">
+            <h4>Discussion of the Features</h4>
+            <p id="modalFeatures"></p>
+        </div>
+        <div class="project-section">
+            <h4>Software Used</h4>
+            <p id="modalSoftware"></p>
+        </div>
+        <div class="project-section" id="modalHardwareSection">
+            <h4>Hardware Used</h4>
+            <p id="modalHardware"></p>
+        </div>
+    </div>
+</div>
+
+<script>
+// ===== FILL IN YOUR REAL CONTENT HERE =====
+// For each project: title, features text, software list, hardware list (optional),
+// and an array of image paths for the screenshots. Add as many images as you want
+// per project — the carousel arrows will cycle through all of them.
+const projectData = {
+    'siguradocs': {
+        title: 'SiguraDocs',
+        features: '[Describe the key features of SiguraDocs here]',
+        software: '[List the software/frameworks used, e.g. React, FastAPI, MySQL]',
+        hardware: '[List any hardware used, e.g. specific devices or scanners]',
+        images: [
+            'assets/projects/siguradocs-1.jpg',
+            'assets/projects/siguradocs-2.jpg'
+        ]
+    },
+    'gps-tracker': {
+        title: 'Mobile GPS Tracker using Arduino',
+        features: '[Describe the key features of this project]',
+        software: '[List the software used]',
+        hardware: '[List the hardware used, e.g. Wemos, Arduino, GPS module]',
+        images: [
+            'assets/projects/gps-tracker-1.jpg'
+        ]
+    },
+    'mp1': {
+        title: 'Machine Problem – 1st Year',
+        features: '[Describe the features of this Machine Problem]',
+        software: '[List the software used]',
+        hardware: null,
+        images: [
+            'assets/projects/mp1-1.jpg'
+        ]
+    },
+    'mp2': {
+        title: 'Machine Problem – 2nd Year',
+        features: '[Describe the features of this Machine Problem]',
+        software: '[List the software used]',
+        hardware: null,
+        images: [
+            'assets/projects/mp2-1.jpg'
+        ]
+    },
+    'mp3': {
+        title: 'Machine Problem – 3rd Year',
+        features: '[Describe the features of this Machine Problem]',
+        software: '[List the software used]',
+        hardware: null,
+        images: [
+            'assets/projects/mp3-1.jpg'
+        ]
+    },
+    'mp4': {
+        title: 'Machine Problem – 4th Year',
+        features: '[Describe the features of this Machine Problem]',
+        software: '[List the software used]',
+        hardware: null,
+        images: [
+            'assets/projects/mp4-1.jpg'
+        ]
+    }
+};
+
+let currentImages = [];
+let currentIndex = 0;
+
+function openProjectModal(id) {
+    const data = projectData[id];
+    currentImages = data.images;
+    currentIndex = 0;
+
+    document.getElementById('modalProjectTitle').textContent = data.title;
+    document.getElementById('modalFeatures').textContent = data.features;
+    document.getElementById('modalSoftware').textContent = data.software;
+
+    const hardwareSection = document.getElementById('modalHardwareSection');
+    if (data.hardware) {
+        hardwareSection.style.display = 'block';
+        document.getElementById('modalHardware').textContent = data.hardware;
+    } else {
+        hardwareSection.style.display = 'none';
+    }
+
+    updateCarouselImage();
+    document.getElementById('projectModal').classList.add('active');
+}
+
+function closeProjectModal() {
+    document.getElementById('projectModal').classList.remove('active');
+}
+
+function updateCarouselImage() {
+    document.getElementById('carouselImage').src = currentImages[currentIndex];
+    document.getElementById('carouselCounter').textContent = (currentIndex + 1) + ' / ' + currentImages.length;
+}
+
+function nextImage() {
+    currentIndex = (currentIndex + 1) % currentImages.length;
+    updateCarouselImage();
+}
+
+function prevImage() {
+    currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+    updateCarouselImage();
+}
+
+document.getElementById('projectModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeProjectModal();
+    }
+});
+
+document.addEventListener('keydown', function(e) {
+    if (document.getElementById('projectModal').classList.contains('active')) {
+        if (e.key === 'Escape') closeProjectModal();
+        if (e.key === 'ArrowRight') nextImage();
+        if (e.key === 'ArrowLeft') prevImage();
+    }
+});
+</script>
 
 <!-- PHOTO MODAL -->
 <div id="photoModal" class="photo-modal">
