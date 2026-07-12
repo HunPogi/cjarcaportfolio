@@ -390,12 +390,14 @@ const developer = {
 const projectData = {
     'siguradocs': {
         title: 'SiguraDocs',
-        features: '[Describe the key features of SiguraDocs here]',
-        software: '[List the software/frameworks used, e.g. React, FastAPI, MySQL]',
-        hardware: '[List any hardware used, e.g. specific devices or scanners]',
+        features: 'A secure web-based and mobile document management system built for Barangay Butong, Cabuyao, Laguna, replacing manual paper-based processing of certificates such as barangay clearances, certificates of residency, certificates of indigency, and business permits. The system is organized into a User Management Module with multi-factor authentication, an Online Document Request Module for residents to submit and track requests in real time, a Document Processing Module giving staff and admins a central dashboard to approve, deny, and issue documents, a Document Verification Module where each issued document gets a unique QR code and reference number for authenticity checks, and a Security Module handling database encryption. Every document is assigned a cryptographic hash as a digital fingerprint, signed with the barangay\u2019s private key, and verified through its public key and QR code. All transactions are also recorded in a tamper-proof audit trail using hash-chaining, where each log entry is cryptographically linked to the one before it, making unauthorized tampering detectable.',
+        software: 'Flutter for the mobile app, React JS for the web frontend, Express JS for the backend, and MySQL as the relational database. Prisma ORM is used as an abstraction layer between the application and MySQL \u2014 instead of writing raw SQL, we use Prisma\u2019s structured methods for database operations, which improves code readability, maintainability, and security, while its parameterized queries help protect the system from SQL injection attacks.',
+        hardware: 'Standard development machines (laptops/PC desktops) for building and testing the system, and Android/iOS smartphones for testing the mobile app and QR code scanning through the device camera during document verification.',
         images: [
-            'assets/projects/siguradocs-1.jpg',
-            'assets/projects/siguradocs-2.jpg'
+            'assets/projects/siguradocs-1.png',
+            'assets/projects/siguradocs-2.png',
+            'assets/projects/siguradocs-3.png',
+            'assets/projects/siguradocs-4.jpg'
         ]
     },
     'gps-tracker': {
